@@ -1,5 +1,5 @@
 import numpy as np
-import scipy
+from scipy.special import expit
 
 class Neural_Network:
     def __init__(self, inputNodes, hiddenNodes, outputNodes, learningRate):
@@ -34,7 +34,7 @@ class Neural_Network:
         self.learning_rate= learningRate
 
         # Activation function, using the sigmoid function (Values of each neuron)
-        self.activation_function = lambda x: scipy.special.expit(x)
+        self.activation_function = lambda x: expit(x)
 
     
     def train(self, input_list, target_list):
